@@ -1,10 +1,82 @@
 {% extends 'base.html' %}
+
+
 {% block content %}
-  <center>
+<center>
+
+    
+  <div class="container">
     <h1>
         Baby Registration Page
       </h1>
-        
+    
+   
+
+  </div>
   </center>
+  <br> <br> <br> <br> <br>
+
+  <center>
+    <div class="container">
+
+      <form method="POST">
+        {% csrf_token %}
+        <div class="col-md-4">
+          <label for="name" class="form-label"></label>
+          <input type="text" class="form-control" placeholder="Full Name" name="name" required>
+          
+        </div>
+        <div class="col-md-4">
+          <label for="age" class="form-label"></label>
+          <input type="text" class="form-control" placeholder="Age" name="age"  required>
+          
+        </div>
+        <div class="col-md-4">
+          <label for="gender" class="form-label"></label>
+          <input type="text" class="form-control" placeholder="Gender" name="gender"  required>
+            </div>
+        
+        <div class="col-md-4">
+          <label for="father_name" class="form-label"></label>
+          <input type="text" class="form-control" placeholder="Father's Name" name="father_name" required>
+          
+        </div>
+
+        <div class="col-md-4">
+          <label for="mother_name" class="form-label"></label>
+          <input type="text" class="form-control" placeholder="Mother's Name" name="mother_name" required>
+          
+        </div>
+          
+          
+        <!-- <div class="col-md-3">
+          <label for="validationCustom05" class="form-label">Zip</label>
+          <input type="text" class="form-control" id="validationCustom05" required>
+          
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+  
+            
+          </div>
+        </div> -->
+        <br> <br> 
+        <div class="col-12">
+          <button class="btn btn-primary col-4" type="submit">Submit form</button>
+        </div>
+      </form>
+      </div>
+  
+  
+    </center>
+
+
+
+
+
+  
+
+
     
 {% endblock %}

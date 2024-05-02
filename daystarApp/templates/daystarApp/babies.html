@@ -1,10 +1,104 @@
 {% extends 'base.html' %}
 {% block content %}
   <center>
+   <br> 
+  <div class="container">
     <h1>
         Babies Page
       </h1>
-        
+      <br> 
+      {% for message in messages %}
+      <div class="alert alert-success custom-alert" role="alert">
+        {{ message }}
+      </div>
+      {% endfor %}
+      <br>
+   
+
+      
+
+      
+      
+
+    
+
+  </div>
+
+  
   </center>
+
+  <div class="table-container">
+    <table class="table mytable">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Gender</th>
+                <th scope="col">fathername</th>
+                <th scope="col">mothername</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for baby in babies %}
+            <tr>
+                <th scope="row">{{ baby.id }}</th>
+                <td>{{ baby.name }}</td>
+                <td>{{ baby.age }}</td>
+                <td>{{ baby.gender }}</td>
+                <td>{{ baby.father_name }}</td>
+                <td>{{ baby.mother_name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<style>
+  .container{
+    color: white !important;
+  }
+
+  .table-container {
+  margin: 0 auto; /* Center the table horizontally */
+  max-width: 600px; /* Adjust the maximum width of the table container */
+}
+
+.mytable {
+  width: 100%; /* Set table width to 100% of its container */
+  border-collapse: collapse; /* Collapse table borders */
+}
+
+.mytable th,
+.mytable td {
+  padding: 8px; /* Adjust cell padding */
+  text-align: left; /* Align text to the left */
+  font-size: 14px; /* Adjust font size */
+}
+
+.mytable th {
+  background-color: #343a40; /* Dark background color for table header */
+  color: #ffffff; /* White text color for table header */
+}
+
+.mytable tbody tr {
+  background-color: #f8f9fa; /* Light background color for table rows */
+}
+
+.mytable tbody tr:nth-child(even) {
+  background-color: #e9ecef; /* Alternate background color for even rows */
+}
+
+.mytable th,
+.mytable td {
+  border: 1px solid #dee2e6; /* Border for table cells */
+}
+
+.custom-alert {
+    max-width: 800px !important;  /* Set the maximum width for the alert */
+    margin: 0 auto; /* Center the alert horizontally */
+  }
+</style>
     
 {% endblock %}
