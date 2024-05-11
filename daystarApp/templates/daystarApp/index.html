@@ -1,53 +1,97 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-  <center>
-    <h1>
-        Dashboard Page
-      </h1>
-        
-  </center>
 
-  {% for message in messages %}
-  <div class="alert alert-success" role="alert">
-      {{ message }}
-  </div>
+{% for message in messages %}
+   
+
+    <div class="container alert alert-success alert-dismissible fade show" style="width: 450px; margin-right: 50px !important;" role="alert">
+      <strong>{{message}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
   {% endfor %}
 
 
-
-
-<div class="container-fluid">
-  <div id="carouselExampleIndicators" class="carousel slide">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  <!-- <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="..." class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
     </div>
-    <!-- <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="{% static 'images/daystar-daycare1.jpg' %}" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="{% static 'images/daystar-daycare2.jpg' %}" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="{% static 'images/daystar-daycare3.jpg' %}" class="d-block w-100" alt="...">
-      </div>
-    </div> -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
 
 
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="..." class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div> -->
 
-</div>
+
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script>
+    // Wait for the document to load
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get all the alert elements with class 'alert-dismissible'
+      var alertElements = document.querySelectorAll('.alert-dismissible');
+      
+      // Loop through each alert element
+      alertElements.forEach(function(alertElement) {
+        // Set timeout to close the alert after 5 seconds
+        setTimeout(function() {
+          alertElement.classList.remove('show'); // Remove the 'show' class to hide the alert
+        }, 3000);
+      });
+    });
+  </script>
+
+  
+
+  
 
 
 {% endblock %}

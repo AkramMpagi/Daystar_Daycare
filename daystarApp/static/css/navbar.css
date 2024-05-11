@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: black !important;
+  background-color: #edeef22b !important;
   color: white !important;
   font-family: Netflix Sans !important;
 }
@@ -29,8 +29,10 @@ li a {
   }
 
   ul {
+    /* border: 1px solid red; */
     list-style-type: none;
     margin: 0;
+    margin-top: 10% !important;
     padding: 0;
     width: 200px;
     background-color: #EDEEF2;
@@ -65,4 +67,12 @@ li a {
     bottom: 0;
     width: 100%;
     position: fixed;
+  }
+
+  .logo img {
+    width: 100px !important;
+    height: 100px !important;
+    margin-top: 10px;
+    margin-left: 30px;
+    /* z-index: 3; */
   }
