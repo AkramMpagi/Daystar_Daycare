@@ -38,8 +38,8 @@
         <li><a href="{% url 'sitters' %}">Sitters</a></li>
         <li><a href="{% url 'baby_registration' %}">Baby Registration</a></li>
         <li><a href="{% url 'sitter_registration' %}">Sitter Registration</a></li>
-        <div class="dropdown">
-          <a href="" class="dropdown-toggle"  data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; margin-left: 10%; color: #A7ADBD; margin-bottom: 10px;">
+        <li><div class="dropdown">
+          <a href="" class="dropdown-toggle"  data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; color: #A7ADBD;">
             Dolls
           </a>
           <ul class="dropdown-menu dropdown-menu-dark">
@@ -48,7 +48,23 @@
             <li><a class="dropdown-item" href="{% url 'otherplay_tools' %}">Other Play Tools</a></li>
             <li><hr class="dropdown-divider"></li>
           </ul>
-        </div>
+        </div></li>
+            
+            <li><div class="dropdown">
+              <a href="" class="dropdown-toggle"  data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none;">
+                Financial
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item active" href="{% url 'invoices' %}">Invoices</a></li>
+                <li><a class="dropdown-item" href="{% url 'all_transactions' %}">All Transactions</a></li>
+                
+                
+                <!-- <li><a class="dropdown-item" href="#"></a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li> -->
+              </ul>
+            </div></li>
         
 
 
@@ -62,21 +78,7 @@
         <!-- <li><a href="{% url 'payment' %}">Payments</a></li> -->
 
 
-        <div class="dropdown">
-          <a href="" class="dropdown-toggle"  data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; margin-left: 10%;     color: #A7ADBD;">
-            Financial
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item active" href="{% url 'invoices' %}">Invoices</a></li>
-            <li><a class="dropdown-item" href="{% url 'all_transactions' %}">All Transactions</a></li>
-            
-            
-            <!-- <li><a class="dropdown-item" href="#"></a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Separated link</a></li> -->
-          </ul>
-        </div>
+        
         <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="{% url 'contact' %}">Contact Us</a></li>
         <li><a href="{% url 'logout' %}">LogOut</a></li>

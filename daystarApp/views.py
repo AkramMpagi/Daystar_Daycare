@@ -15,7 +15,10 @@ from django.contrib.auth.decorators import login_required
 
 
 def index(request):
-    return render(request, 'daystarApp/index.html')
+
+    count_babies = Baby.objects.count()
+    return render(request, 'daystarApp/index.html', {'count_babies': count_babies})
+
 
 
 def about(request):
