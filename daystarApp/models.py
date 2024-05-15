@@ -12,6 +12,10 @@ class Baby(models.Model):
     mother_name = models.CharField(max_length=200, null=True, blank=True)
     brought_by = models.CharField(max_length=200, null=True, blank=True)
     time_of_arrival = models.DateField(null=True, blank=True)
+    period_of_stay = models.CharField(max_length=8, choices=(("Full Day","Full Day"), ("Half Day","Half Day")))
+    fees = models.IntegerField(null=True, blank=True)
+    baby_number = models.IntegerField(null=True)
+
     
     
     
