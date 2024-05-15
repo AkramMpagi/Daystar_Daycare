@@ -64,9 +64,25 @@ def sitter_registration(request):
         name = request.POST['name']
         contact = request.POST['contact']
         # category = request.POST['category']
-        timeIn = request.POST['timeIn']
-        timeOut = request.POST['timeOut']
-        new_sitter = Sitter(name=name, contact=contact, timeIn=timeIn, timeOut=timeOut)
+        # timeIn = request.POST['timeIn']
+        # timeOut = request.POST['timeOut']
+        date_of_birth = request.POST['date_of_birth']
+        recommender_name = request.POST['recommender_name']
+        level_of_education = request.POST['level_of_education']
+        nin = request.POST['nin']
+        sitter_number = request.POST['sitter_number']
+        location = request.POST['location']
+        next_of_kin = request.POST['next_of_kin']
+
+        new_sitter = Sitter(name=name, contact=contact, date_of_birth=date_of_birth, recommender_name=recommender_name, level_of_education=level_of_education, nin=nin, sitter_number=sitter_number, location=location, next_of_kin=next_of_kin)
+
+
+
+
+
+
+
+
         new_sitter.save()
         messages.success(request, 'You have successfully created a new sitter')
         return redirect('sitters')
