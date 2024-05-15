@@ -33,6 +33,8 @@ class Payment(models.Model):
 
 class Sitter(models.Model):
     name = models.CharField(max_length=100, null=True, blank=True)
+    date_of_birth = models.DateTimeField(null=True, blank=True)
+
     contact = models.IntegerField(null=True, blank=True)
     location = models.CharField(max_length=100, choices=(('Kabalagala','Kabalagala'), ('','')))
     next_of_kin = models.CharField(max_length=100,)
@@ -41,6 +43,7 @@ class Sitter(models.Model):
     recommender_name = models.CharField(max_length=100)
     level_of_education = models.CharField(max_length=100, choices=(("Degree","Degree"), ("Diploma","Diploma"), ("UACE","UACE"), ("UCE","UCE")))
     sitter_number = models.IntegerField()
+
 
 
 
