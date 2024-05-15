@@ -34,6 +34,15 @@ class Payment(models.Model):
 class Sitter(models.Model):
     name = models.CharField(max_length=100, null=True, blank=True)
     contact = models.IntegerField(null=True, blank=True)
+    location = models.CharField(max_length=100, choices=(('Kabalagala','Kabalagala'), ('','')))
+    next_of_kin = models.CharField(max_length=100,)
+    contact = models.IntegerField(null=True, blank=True)
+    nin = models.CharField(max_length=14)
+    recommender_name = models.CharField(max_length=100)
+
+
+
+
     # category = models.ForeignKey(CategoryStay, on_delete=models.CASCADE, null=True, blank=True)
     category = models.CharField(max_length=8, choices=(("Full Day","Full Day"), ("Half Day","Half Day")))
     timeIn = models.DateField(null=True, blank=True)
