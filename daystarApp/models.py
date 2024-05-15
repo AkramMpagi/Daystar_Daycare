@@ -39,6 +39,9 @@ class Sitter(models.Model):
     contact = models.IntegerField(null=True, blank=True)
     nin = models.CharField(max_length=14)
     recommender_name = models.CharField(max_length=100)
+    level_of_education = models.CharField(max_length=100, choices=(("Degree","Degree"), ("Diploma","Diploma"), ("UACE","UACE"), ("UCE","UCE")))
+
+
 
 
 
