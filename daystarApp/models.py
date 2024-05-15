@@ -10,6 +10,8 @@ class Baby(models.Model):
     location = models.CharField(max_length=50, null=True, blank=True)
     father_name = models.CharField(max_length=200, null=True, blank=True)
     mother_name = models.CharField(max_length=200, null=True, blank=True)
+    brought_by = models.CharField(max_length=200, null=True, blank=True)
+    time_of_arrival = models.DateField(null=True, blank=True)
     
     
     
@@ -43,13 +45,6 @@ class Sitter(models.Model):
     recommender_name = models.CharField(max_length=100)
     level_of_education = models.CharField(max_length=100, choices=(("Degree","Degree"), ("Diploma","Diploma"), ("UACE","UACE"), ("UCE","UCE")))
     sitter_number = models.IntegerField()
-
-
-
-
-
-
-
 
     # category = models.ForeignKey(CategoryStay, on_delete=models.CASCADE, null=True, blank=True)
     category = models.CharField(max_length=8, choices=(("Full Day","Full Day"), ("Half Day","Half Day")))
