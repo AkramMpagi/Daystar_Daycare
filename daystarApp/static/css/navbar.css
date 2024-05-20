@@ -13,9 +13,23 @@ body {
 li a {
     display: block;
     width: 150px;
+    color: #9669C9 !important;
+    text-decoration: none !important;
+    transition: all 0.5s ease !important;
+    /* z-index: 2 !important; */
     /* border: 1px solid red; */
     
   }
+
+  li a:hover {
+    background-color: #9669C9 !important;
+    color: white !important;
+    transform: translateX(10px) !important;
+    border-radius: 10px !important;
+    /* padding: 5px !important; */
+    /* border: 1px solid red; */
+  }
+
 
   ul {
     
