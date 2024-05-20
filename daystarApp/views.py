@@ -12,7 +12,30 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 
 
+
 # Create your views here.
+
+def edit_sitter(request, sitter_id):
+    sitter = get_object_or_404(Sitter, pk=sitter_id)
+    if request.method == 'POST':
+        # If the form is submitted with POST method, process the form data
+        sitter.name = request.POST.get('name')
+        sitter.contact = request.POST.get('contact')
+        sitter.date_of_birth = request.POST.get('date_of_birth')
+        sitter.location = request.POST.get('location')
+        sitter.next_of_kin = request.POST.get('next_of_kin')
+        sitter.nin = request.POST.get('nin')
+        sitter.recommender_name = request.POST.get('recommender_name')
+        sitter.level_of_education = request.POST.get('level_of_education')
+        sitter.sitter_number = request.POST.get('sitter_number')
+        sitter.category = request.POST.get('category')
+        sitter.save()  # Save the changes to the sitter object
+        return redirect('result_detail', result_id=sitter.id)  # Redirect to the result detail page after saving
+
+
+
+    
+    return render(request, 'daystarApp/edit_sitter.html', {'sitter': sitter})
 
 
 def result_detail(request, result_id):

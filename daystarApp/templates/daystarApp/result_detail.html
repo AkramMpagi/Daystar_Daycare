@@ -6,6 +6,49 @@
         color: purple !important;
     }
 
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
 
 
 
@@ -14,28 +57,27 @@
 
 
 
-<title>Result Detail</title>
 
 <body>
-    <center>
-    <h1>Result Detail</h1>
-    <p>Name: {{ result.name }}</p>  <!-- Display other result details here -->
-    <p>Contact: {{ result.contact }}</p>
-    <p>Category: {{ result.category }}</p>
-    <p>Location: {{ result.location }}</p>
-    <p>Next of Kin: {{ result.next_of_kin}}</p>
-    <p>Date of Birth: {{ result.date_of_birth}}</p>
-    <p>Nin: {{ result.nin}}</p>
-    <p>Recommender Name: {{ result.recommender_name}}</p>
-    <p>Level of Education: {{ result.level_of_education}}</p>
-    <p>Sitter Number: {{ result.sitter_number}}</p>
-    <a href="{% url 'sitters' %}">Back to Sitters</a>
-    </center>
-
-
-
-
-
+    <div class="container">
+        <center>
+            <h1>Sitter Details</h1>
+            <p><strong>Name:</strong> {{ result.name }}</p>
+            <p><strong>Contact:</strong> {{ result.contact }}</p>
+            <p><strong>Category:</strong> {{ result.category }}</p>
+            <p><strong>Location:</strong> {{ result.location }}</p>
+            <p><strong>Next of Kin:</strong> {{ result.next_of_kin }}</p>
+            <p><strong>Date of Birth:</strong> {{ result.date_of_birth }}</p>
+            <p><strong>Nin:</strong> {{ result.nin }}</p>
+            <p><strong>Recommender Name:</strong> {{ result.recommender_name }}</p>
+            <p><strong>Level of Education:</strong> {{ result.level_of_education }}</p>
+            <p><strong>Sitter Number:</strong> {{ result.sitter_number }}</p>
+            <div class="editbtn">
+                <a class="btn btn-secondary" href="{% url 'edit_sitter' result.id %}">Edit</a>
+            <a class="btn btn-secondary" href="{% url 'sitters' %}">Back to Sitters</a>
+        </div>
+        </center>
+    </div>
 </body>
 
 {% endblock %}

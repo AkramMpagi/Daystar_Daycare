@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    .aside {
+        display: flex !important;
+        width: 100% !important;
+        margin-left: 8% !important;
+        justify-content: space-evenly !important;
+    }
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<center>
+    <div class="container mt-5">
+        <h1>Edit Sitter</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <!-- Add form fields to edit sitter details here -->
+            <div class="aside">
+            <div class="form-group">
+                <label for="name"></label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ sitter.name }}" style="width: 400px;" placeholder="Full Name">
+            </div>
+            <div class="form-group">
+                <label for="contact"></label>
+                <input type="text" class="form-control" id="contact" name="contact" value="{{ sitter.contact }}" style="width: 400px;" placeholder="Contact">
+            </div>
+        </div>
+
+
+        <div class="aside">
+            <div class="form-group">
+                <label for="date_of_birth"></label>
+                <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" value="{{ sitter.date_of_birth }}" style="width: 400px;" placeholder="Date of Birth">
+            </div>
+            <div class="form-group">
+                <label for="location"></label>
+                <input type="text" class="form-control" id="location" name="location" value="{{ sitter.location }}" style="width: 400px;" placeholder="Location">
+            </div>
+        </div>
+
+
+        <div class="aside">
+            <div class="form-group">
+                <label for="next_of_kin"></label>
+                <input type="text" class="form-control" id="next_of_kin" name="next_of_kin" value="{{ sitter.next_of_kin }}" style="width: 400px;" placeholder="Next of Kin">
+            </div>
+            <div class="form-group">
+                <label for="nin"></label>
+                <input type="text" class="form-control" id="nin" name="nin" value="{{ sitter.nin }}" style="width: 400px;" placeholder="Nin">
+            </div>
+        </div>
+
+
+        <div class="aside">
+            <div class="form-group">
+                <label for="recommender_name"></label>
+                <input type="text" class="form-control" id="recommender_name" name="recommender_name" value="{{ sitter.recommender_name }}" style="width: 400px;" placeholder="Recommender Name">
+            </div>
+            <div class="form-group">
+                <label for="level_of_education"></label>
+                <input type="text" class="form-control" id="level_of_education" name="level_of_education" value="{{ sitter.level_of_education }}" style="width: 400px;" placeholder="Level of Education">
+            </div>
+        </div>
+
+
+        <div class="aside">
+            <div class="form-group">
+                <label for="sitter_number"></label>
+                <input type="text" class="form-control" id="sitter_number" name="sitter_number" value="{{ sitter.sitter_number }}" style="width: 400px;" placeholder="Sitter Number">
+            </div>
+            <div class="form-group">
+                <label for="category"></label>
+                <select class="form-control" id="category" name="category" style="width: 400px;">
+                    <option value="Half Day" {% if sitter.category == "Half Day" %} selected {% endif %}>Half Day</option>
+                    <option value="Full Day" {% if sitter.category == "Full Day" %} selected {% endif %}>Full Day</option>
+                </select>
+            </div>
+            
+        </div>
+            <!-- Add more form fields for other sitter details -->
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <a href="{% url 'result_detail' sitter.id %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+    
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
