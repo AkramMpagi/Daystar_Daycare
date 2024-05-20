@@ -24,7 +24,7 @@
 
 
     {% for message in messages %}
-    <div class="alert alert-success" role="alert">
+    <div class="alert alert-success alert-dismissible" role="alert">
         {{ message }}
     </div>
     {% endfor %}
@@ -134,7 +134,21 @@
 
 
 
-
+<script>
+    // Wait for the document to load
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get all the alert elements with class 'alert-dismissible'
+      var alertElements = document.querySelectorAll('.alert-dismissible');
+      
+      // Loop through each alert element
+      alertElements.forEach(function(alertElement) {
+        // Set timeout to close the alert after 5 seconds
+        setTimeout(function() {
+          alertElement.classList.remove('show'); // Remove the 'show' class to hide the alert
+        }, 3000);
+      });
+    });
+  </script>
 
 
 
