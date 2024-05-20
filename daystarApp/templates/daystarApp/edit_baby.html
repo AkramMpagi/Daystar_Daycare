@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    .aside {
+        display: flex !important;
+        width: 100% !important;
+        margin-left: 8% !important;
+        justify-content: space-evenly !important;
+    }
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<center>
+    <div class="container mt-5">
+        <h1>Edit Baby</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <!-- Add form fields to edit sitter details here -->
+            <div class="aside">
+            <div class="form-group">
+                <label for="name"></label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ baby.name }}" style="width: 400px;" placeholder="Full Name">
+            </div>
+            <div class="form-group">
+                <label for="age"></label>
+                <input type="text" class="form-control" id="age" name="age" value="{{ baby.age }}" style="width: 400px;" placeholder="Age">
+            </div>
+        </div>
+
+
+        <div class="aside">
+            <div class="form-group">
+                <label for="gender"></label>
+                <input type="date" class="form-control" id="gender" name="gender" value="{{ baby.gender }}" style="width: 400px;" placeholder="Gender">
+            </div>
+            <div class="form-group">
+                <label for="location"></label>
+                <input type="text" class="form-control" id="location" name="location" value="{{ baby.location }}" style="width: 400px;" placeholder="Location">
+            </div>
+        </div>
+
+
+        <div class="aside">
+            <div class="form-group">
+                <label for="father_name"></label>
+                <input type="text" class="form-control" id="father_name" name="father_name" value="{{ baby.father_name }}" style="width: 400px;" placeholder="Father Name">
+            </div>
+            <div class="form-group">
+                <label for="mother_name"></label>
+                <input type="text" class="form-control" id="mother_name" name="mother_name" value="{{ baby.mother_name }}" style="width: 400px;" placeholder="Mother Name">
+            </div>
+        </div>
+
+
+        <div class="aside">
+            <div class="form-group">
+                <label for="brought_by"></label>
+                <input type="text" class="form-control" id="brought_by" name="brought_by" value="{{ baby.brought_by }}" style="width: 400px;" placeholder="Brought By">
+            </div>
+            <div class="form-group">
+                <label for="time_of_arrival;"></label>
+                <input type="text" class="form-control" id="time_of_arrival;" name="time_of_arrival;" value="{{ baby.time_of_arrival }}" style="width: 400px;" placeholder="Time of Arrival">
+            </div>
+        </div>
+
+
+        <div class="aside">
+            <div class="form-group">
+                <label for="fees"></label>
+                <input type="text" class="form-control" id="period_of_stay" name="period_of_stay" value="{{ baby.period_of_stay }}" style="width: 400px;" placeholder="Period of Stay">
+            </div>
+
+            <div class="form-group">
+                <label for="fees"></label>
+                <input type="number" class="form-control" id="fees" name="fees" value="{{ baby.fees }}" style="width: 400px;" placeholder="Fees">
+            </div>
+            
+            <div class="form-group">
+                <label for="baby_number"></label>
+                <input type="number" class="form-control" id="baby_number" name="baby_number" value="{{ baby.baby_number }}" style="width: 400px;" placeholder="Baby_Number">
+            </div>
+            
+        </div>
+            <!-- Add more form fields for other sitter details -->
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <a href="{% url 'result_baby_details' baby.id %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+    
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+

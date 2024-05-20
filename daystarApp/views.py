@@ -15,6 +15,40 @@ from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 
+
+def edit_baby(request, baby_id):
+    baby = get_object_or_404(Baby, pk=baby_id)
+    if request.method == 'POST':
+        # If the form is submitted with POST method, process the form data
+        baby.name = request.POST.get('name')
+        baby.age = request.POST.get('age')
+        baby.gender = request.POST.get('gender')
+        baby.location = request.POST.get('location')
+        baby.father_name = request.POST.get('father_name')
+        baby.mother_name = request.POST.get('mother_name')
+        baby.brought_by = request.POST.get('brought_by')
+        baby.time_of_arrival = request.POST.get('time_of_arrival')
+        baby.period_of_stay = request.POST.get('period_of_stay')
+        baby.fees = request.POST.get('fees')
+        baby.baby_number = request.POST.get('baby_number')
+
+        baby.save()  # Save the changes to the sitter object
+        return redirect('result_baby_details', result_id=baby.id)  # Redirect to the result detail page after saving
+
+
+
+    
+    return render(request, 'daystarApp/edit_baby.html', {'baby': baby})
+
+
+
+
+
+def result_baby_details(request, result_id):
+    result = get_object_or_404(Baby, pk=result_id)  # Replace YourModel with your actual model
+    return render(request, 'daystarApp/results_baby_details.html', {'result': result})
+
+
 def edit_sitter(request, sitter_id):
     sitter = get_object_or_404(Sitter, pk=sitter_id)
     if request.method == 'POST':
@@ -36,6 +70,7 @@ def edit_sitter(request, sitter_id):
 
     
     return render(request, 'daystarApp/edit_sitter.html', {'sitter': sitter})
+
 
 
 def result_detail(request, result_id):

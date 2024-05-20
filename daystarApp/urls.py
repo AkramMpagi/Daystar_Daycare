@@ -23,6 +23,11 @@ urlpatterns = [
     path('logout/', views.logout_user, name='logout'),
     path('result_detail/<int:result_id>/', views.result_detail, name='result_detail'),
     path('edit_sitter/<int:sitter_id>/', views.edit_sitter, name='edit_sitter'),
+    path('result_baby_details/<int:result_id>/', views.result_baby_details, name='result_baby_details'),
+    path('edit_baby/<int:baby_id>/', views.edit_baby, name='edit_baby'),
+
+
+
 
 #  path('logout/', auth_views.LogoutView.as_view(template_name = 'products/logout.html'), name = 'logout' ),
   

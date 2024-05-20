@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    body {
+        color: purple !important;
+    }
+
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+
+
+</style>
+
+
+
+
+<body>
+    <div class="container">
+        <center>
+            <h1>Baby Details</h1>
+            <p><strong>Name:</strong> {{ result.name }}</p>
+            <p><strong>Age:</strong> {{ result.age }}</p>
+            <p><strong>Gender:</strong> {{ result.gender }}</p>
+            <p><strong>Location:</strong> {{ result.location }}</p>
+            <p><strong>Father Name:</strong> {{ result.father_name }}</p>
+            <p><strong>Mother Name:</strong> {{ result.mother_name }}</p>
+            <p><strong>Brought by:</strong> {{ result.brought_by }}</p>
+            <p><strong>Time of Arrival:</strong> {{ result.time_of_arrival }}</p>
+            <p><strong>Period of Stay:</strong> {{ result.period_of_stay }}</p>
+            <p><strong>Fees:</strong> {{ result.fees }}</p>
+            <p><strong>Baby Number:</strong> {{ result.baby_number }}</p>
+            <div class="editbtn">
+                <a class="btn btn-secondary" href="{% url 'edit_baby' result.id %}">Edit</a>
+            <a class="btn btn-secondary" href="{% url 'baby' %}">Back to Babies</a>
+        </div>
+        </center>
+    </div>
+</body>
+
+{% endblock %}
