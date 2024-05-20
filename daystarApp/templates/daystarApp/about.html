@@ -1,11 +1,162 @@
 {% extends 'base.html' %}
 {% block content %}
+
+<style>
+  .about-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+  }
+  
+  .about-container h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+  }
+  
+  .about-container h2 {
+      font-size: 2em;
+      margin-top: 20px;
+      color: #333;
+      text-align: center;
+  }
+  
+  .mission-vision {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+  }
+  
+  .mission, .vision {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+  }
+  
+  .mission p, .vision p {
+      margin: 10px 0;
+  }
+  
+  .history {
+      margin-top: 30px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+  }
+  
+  .history p {
+      margin: 10px 0;
+  }
+  
+  .team {
+      margin-top: 30px;
+  }
+  
+  .team-members {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+  }
+  
+  .team-member {
+      text-align: center;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      width: 200px;
+  }
+  
+  .team-member img {
+      width: 100%;
+      border-radius: 50%;
+      margin-bottom: 10px;
+  }
+  
+  .team-member h3 {
+      font-size: 1.5em;
+      margin: 10px 0;
+  }
+  
+  .team-member p {
+      font-size: 1em;
+      color: #6233AF;
+  }
+  </style>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="about-container">
+
   <center>
     <h1>
-        About Page
+        About Us Page
       </h1>
         
   </center>
+
+  <section class="mission-vision">
+    <div class="mission">
+        <h2>Our Mission</h2>
+        <p>To provide the highest quality care and services to our clients, ensuring their well-being and happiness.</p>
+    </div>
+    <div class="vision">
+        <h2>Our Vision</h2>
+        <p>To be the leading provider of childcare and sitter services, known for our reliability, compassion, and excellence.</p>
+    </div>
+</section>
+<section class="history">
+    <h2>Our History</h2>
+    <p>Founded in 2010, our company has been dedicated to offering top-notch childcare solutions. Over the years, we have grown and evolved, always staying true to our core values and mission.</p>
+</section>
+<section class="team">
+    <h2>Meet Our Team</h2>
+    <div class="team-members">
+        
+            <h3>John Doe</h3>
+            <p>CEO</p>
+        </div>
+       
+            <h3>Jane Smith</h3>
+            <p>Head of Childcare</p>
+        
+        
+            <h3>Emily Johnson</h3>
+            <p>Chief Sitter Coordinator</p>
+      
+</section>
+
+
+  
+
+
     
 
 {% endblock %}

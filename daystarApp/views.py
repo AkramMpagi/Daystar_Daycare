@@ -9,10 +9,15 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, get_object_or_404
 
 
 # Create your views here.
 
+
+def result_detail(request, result_id):
+    result = get_object_or_404(Sitter, pk=result_id)  # Replace YourModel with your actual model
+    return render(request, 'daystarApp/result_detail.html', {'result': result})
 
 def index(request):
 
@@ -52,7 +57,11 @@ def contact(request):
 
 def sitters(request):
     sitters = Sitter.objects.all()
-    return render(request, 'daystarApp/sitters.html', {'sitters': sitters})
+    query = request.GET.get('query')
+    results = []
+    if query:
+        results = Sitter.objects.filter(name__icontains=query)  
+    return render(request, 'daystarApp/sitters.html', {'sitters': sitters, 'results': results, 'query': query})
 
 
 

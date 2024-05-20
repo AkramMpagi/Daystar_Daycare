@@ -11,6 +11,61 @@
     margin-left: 180px !important;
     margin-top: 5% !important;
   }
+
+  .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card-title {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+        }
+        .card-title i {
+            margin-right: 10px;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .first-card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .img-fluid {
+            border-radius: 15px 0 0 15px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </style>
 
 {% for message in messages %}
@@ -25,75 +80,72 @@
   <center>
    
     
-    <div class="first-card">
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="..." class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Babies</h5>
-          <p class="card-text">Number: {{ count_babies }}</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
+    <div class="container mt-5">
+      <div class="first-card">
+          <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                  <div class="col-md-4">
+                      <img src="path/to/your/image1.jpg" class="img-fluid rounded-start" alt="Baby Image">
+                  </div>
+                  <div class="col-md-8">
+                      <div class="card-body">
+                          <h5 class="card-title"><i class="fas fa-baby"></i> Babies</h5>
+                          <p class="card-text">Number: {{ count_babies }}</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
   
-
-
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="..." class="img-fluid rounded-start" alt="...">
+          <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                  <div class="col-md-4">
+                      <img src="path/to/your/image2.jpg" class="img-fluid rounded-start" alt="Card Image">
+                  </div>
+                  <div class="col-md-8">
+                      <div class="card-body">
+                          <h5 class="card-title"><i class="fas fa-info-circle"></i> Card Title</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
+  
+      <!-- Bottom cards -->
+      <div class="first-card mt-4">
+          <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                  <div class="col-md-4">
+                      <img src="path/to/your/image3.jpg" class="img-fluid rounded-start" alt="Card Image">
+                  </div>
+                  <div class="col-md-8">
+                      <div class="card-body">
+                          <h5 class="card-title"><i class="fas fa-star"></i> Card Title</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+  
+          <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                  <div class="col-md-4">
+                      <img src="path/to/your/image4.jpg" class="img-fluid rounded-start" alt="Card Image">
+                  </div>
+                  <div class="col-md-8">
+                      <div class="card-body">
+                          <h5 class="card-title"><i class="fas fa-heart"></i> Card Title</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-    </div>
   </div>
-</div>
-
-
-
-<!-- bottom cards -->
-<div class="first-card">
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="..." class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="..." class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 

@@ -12,7 +12,9 @@ body {
 
 li a {
     display: block;
-    width: 60px;
+    width: 150px;
+    /* border: 1px solid red; */
+    
   }
 
   ul {
@@ -21,12 +23,13 @@ li a {
     margin: 0;
     padding: 0;
     width: 60px;
-    
+    /* border: 1px solid red; */
+
   }
   
-  li a {
+  /* li a {
     display: block;
-  }
+  } */
 
   ul {
     list-style-type: none;
@@ -52,8 +55,10 @@ li a {
   nav{
     top: 0;
     height: 100%;
+    /* width: 20%; */
     position: fixed;
     background-color: #EDEEF2;
+    /* border: 1px solid red; */
   }
   
   /* footer starts here*/

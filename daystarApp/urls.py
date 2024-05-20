@@ -20,7 +20,8 @@ urlpatterns = [
     path('all_transactions/', views.all_transactions, name='all_transactions'),
     # path('login/', views.login_user, name='login'),
     path('', views.login_user, name='login'),
-    path('logout/', views.logout_user, name='logout')
+    path('logout/', views.logout_user, name='logout'),
+    path('result_detail/<int:result_id>/', views.result_detail, name='result_detail'),
 
 #  path('logout/', auth_views.LogoutView.as_view(template_name = 'products/logout.html'), name = 'logout' ),
   

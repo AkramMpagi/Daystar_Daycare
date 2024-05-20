@@ -1,11 +1,121 @@
 {% extends 'base.html' %}
 {% block content %}
+<style>
+    .search-page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto; /* Changed from 100vh to auto */
+        text-align: center;
+    }
+    
+    .search-container {
+        max-width: 400px;
+        width: 100%;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        margin-top: 20px; /* Added margin-top */
+    }
+    
+    .search-container h1 {
+        margin-bottom: 20px;
+        font-size: 2em;
+    }
+    
+    .form-inline {
+        display: flex;
+        align-items: center; /* Changed from column to center */
+    }
+    
+    .form-inline .form-control {
+        flex: 1; /* Added flex property */
+        max-width: 300px;
+        margin-bottom: 10px;
+    }
+    
+    .form-inline .btn {
+        max-width: 150px;
+        margin-left: 10px; /* Added margin-left */
+    }
+    
+    /* result style */
+    
+.search-results {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.search-results h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: purple;
+}
+
+.search-results ul {
+    list-style: none;
+    padding: 0;
+}
+
+.search-results li {
+    color: purple;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.search-results li:last-child {
+    border-bottom: none;
+}
+
+.no-results {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: purple;
+}
+
+tr:hover {
+    
+    cursor: pointer !important;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <center>
     <br> 
-    <h1>
+    <h1 style="color: purple;">
         Sitters Page
       </h1>
-      <br> 
+    
       {% for message in messages %}
       <div class="alert alert-success custom-alert" role="alert">
         {{ message }}
@@ -13,28 +123,64 @@
       {% endfor %}
       <br>
 
-      <div class="table-container">
-        <table class="table mytable">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">No</th>
-                    <th scope="col">Full Names</th>
-                    <th scope="col">Contact</th>
-                    <th scope="col">Category</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for sitter in sitters %}
-                <tr>
-                    <th scope="row">{{ sitter.id }}</th>
-                    <td>{{ sitter.name }}</td>
-                    <td>{{ sitter.contact }}</td>
-                    <td>{{ sitter.category }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+      <div class="search-container">
+    
+        <form class="form-inline my-2 my-lg-0" method="get" action="{% url 'sitters' %}">
+           <input class="form-control mr-sm-2" type="text" placeholder="Search" value="{{ query }}" name="query">
+            <!-- <input type="text" name="query" placeholder="Search..." value="{{ query }}"> -->
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
     </div>
+    
+    {% if results %}
+    <div class="search-results">
+        <h2>Search Results</h2>
+        <ul>
+            {% for result in results %}
+            <li>
+                <a href="{% url 'result_detail' result.id %}">{{ result.name }}</a>
+            </li>  
+            {% endfor %}
+        </ul>
+    </div>
+{% else %}
+    {% if query %}
+        <p>No results found for "{{ query }}".</p>
+    {% endif %}
+{% endif %}
+
+      
+
+
+
+
+
+
+
+      <br> <br>
+
+      <div class="table-container">
+    <table class="table mytable table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Full Names</th>
+                <th scope="col">Contact</th>
+                <th scope="col">Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sitter in sitters %}
+            <tr onclick="window.location='{% url 'result_detail' sitter.id %}';" style="cursor: pointer;">
+                <td><a style="text-decoration: none; color: 
+                    rgb(0, 0, 0) !important;" href="{% url 'result_detail' sitter.id %}">{{ sitter.name }}</a></td>
+                <td>{{ sitter.contact }}</td>
+                <td>{{ sitter.category }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
   </center>
 
 
