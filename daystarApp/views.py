@@ -80,7 +80,11 @@ def result_detail(request, result_id):
 def index(request):
 
     count_babies = Baby.objects.count()
-    return render(request, 'daystarApp/index.html', {'count_babies': count_babies})
+    count_sitters = Sitter.objects.count()
+    count_dolls = Doll.objects.count()
+    count_payments = Payment.objects.count()
+
+    return render(request, 'daystarApp/index.html', {'count_babies': count_babies, 'count_sitters': count_sitters, 'count_dolls': count_dolls, 'count_payments': count_payments})
 
 
 

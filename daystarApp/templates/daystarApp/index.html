@@ -2,213 +2,148 @@
 {% load static %}
 {% block content %}
 <style>
+  .contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    text-align: center;
+  }
+
   .first-card {
     display: flex;
-    justify-content: space-between;
-    
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
     width: 80%;
-    /* border: solid 1px red !important; */
-    margin-left: 180px !important;
-    margin-top: 5% !important;
+    margin: 0 auto;
+    margin-top: 5%;
   }
 
   .card {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-        }
-        .card-title {
-            display: flex;
-            align-items: center;
-            font-weight: bold;
-        }
-        .card-title i {
-            margin-right: 10px;
-        }
-        .card-body {
-            padding: 20px;
-        }
-        .first-card {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .img-fluid {
-            border-radius: 15px 0 0 15px;
-        }
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    width: 45%; /* Adjusted to fit two cards per row */
+  }
 
+  .card:hover {
+    transform: translateY(-10px);
+  }
 
+  .card-title {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+  }
 
+  .card-title i {
+    margin-right: 10px;
+  }
 
+  .card-body {
+    padding: 20px;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  .img-fluid {
+    border-radius: 15px 0 0 15px;
+  }
 
 </style>
 
 {% for message in messages %}
-   
-
-    <div class="container alert alert-success alert-dismissible fade show" style="width: 450px; margin-right: 50px !important;" role="alert">
-      <strong>{{message}}</strong>
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-  {% endfor %}
-
-  <center>
-   
-    
-    <div class="container mt-5">
-      <div class="first-card">
-          <div class="card mb-3" style="max-width: 540px;">
-              <div class="row g-0">
-                  <div class="col-md-4">
-                      <img src="path/to/your/image1.jpg" class="img-fluid rounded-start" alt="Baby Image">
-                  </div>
-                  <div class="col-md-8">
-                      <div class="card-body">
-                          <h5 class="card-title" style="color: purple;"><i class="fas fa-baby"></i> Babies</h5>
-                          <p class="card-text">Number: {{ count_babies }}</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-  
-          <div class="card mb-3" style="max-width: 540px;">
-              <div class="row g-0">
-                  <div class="col-md-4">
-                      <img src="path/to/your/image2.jpg" class="img-fluid rounded-start" alt="Card Image">
-                  </div>
-                  <div class="col-md-8">
-                      <div class="card-body">
-                          <h5 class="card-title"><i class="fas fa-info-circle"></i> Card Title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  
-      <!-- Bottom cards -->
-      <div class="first-card mt-4">
-          <div class="card mb-3" style="max-width: 540px;">
-              <div class="row g-0">
-                  <div class="col-md-4">
-                      <img src="path/to/your/image3.jpg" class="img-fluid rounded-start" alt="Card Image">
-                  </div>
-                  <div class="col-md-8">
-                      <div class="card-body">
-                          <h5 class="card-title"><i class="fas fa-star"></i> Card Title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-  
-          <div class="card mb-3" style="max-width: 540px;">
-              <div class="row g-0">
-                  <div class="col-md-4">
-                      <img src="path/to/your/image4.jpg" class="img-fluid rounded-start" alt="Card Image">
-                  </div>
-                  <div class="col-md-8">
-                      <div class="card-body">
-                          <h5 class="card-title"><i class="fas fa-heart"></i> Card Title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+  <div class="container alert alert-success alert-dismissible fade show" style="width: 450px; margin-right: 50px;" role="alert">
+    <strong>{{ message }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
+{% endfor %}
 
+<center>
+  <br> <br>
+  <h1 style="color: purple;">
+    Dashboard
+  </h1>
 
+   
+  <div class="container mt-5">
+    <div class="first-card">
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <a href="{% url 'baby' %}" class="card-title" style="color: purple; text-decoration: none; font-size: xx-large;"><i class="fas fa-baby"></i> Babies</a>
+              <p class="card-text">Number: {{ count_babies }}</p>
+              <p class="card-text"><small class="text-muted"><a href="{% url 'baby' %}"></a></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <a href="{% url 'sitters' %}" class="card-title" style="color: purple; text-decoration: none; font-size: xx-large;"><i class="fas fa-user"></i> Sitters</a>
+              <p class="card-text">Number: {{ count_sitters }}</p>
+              <p class="card-text"><small class="text-muted"><a href="{% url 'sitters' %}"></a></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <a href="{% url 'dolls' %}" class="card-title" style="color: purple; text-decoration: none;font-size: xx-large;"><i class="fas fa-doll"></i> Dolls</a>
+              <p class="card-text">Number: {{ count_dolls }}</p>
+              <p class="card-text"><small class="text-muted"><a href="{% url 'dolls' %}"></a></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <a href="{% url 'payment' %}" class="card-title" style="color: purple; text-decoration: none;font-size: xx-large;"><i class="fas fa-credit-card"></i> Payments</a>
+              <p class="card-text">Number: {{ count_payments }}</p>
+              <p class="card-text"><small class="text-muted"><a href="{% url 'payment' %}"></a></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <!-- Add more cards here as needed -->
 
-
-
-
+    </div>
+  </div>
 </center>
 
-
- 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <script>
-    // Wait for the document to load
-    document.addEventListener('DOMContentLoaded', function () {
-      // Get all the alert elements with class 'alert-dismissible'
-      var alertElements = document.querySelectorAll('.alert-dismissible');
-      
-      // Loop through each alert element
-      alertElements.forEach(function(alertElement) {
-        // Set timeout to close the alert after 5 seconds
-        setTimeout(function() {
-          alertElement.classList.remove('show'); // Remove the 'show' class to hide the alert
-        }, 3000);
-      });
+<script>
+  // Wait for the document to load
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get all the alert elements with class 'alert-dismissible'
+    var alertElements = document.querySelectorAll('.alert-dismissible');
+    
+    // Loop through each alert element
+    alertElements.forEach(function(alertElement) {
+      // Set timeout to close the alert after 5 seconds
+      setTimeout(function() {
+        alertElement.classList.remove('show'); // Remove the 'show' class to hide the alert
+      }, 3000);
     });
-  </script>
-
-  
-
-  
-
-
+  });
+</script>
 {% endblock %}
-
-

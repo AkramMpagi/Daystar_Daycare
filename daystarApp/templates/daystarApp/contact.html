@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 
-
 {% block title %}Contact Us{% endblock title %}
 
 {% block content %}
@@ -39,10 +38,8 @@
 
 {% endblock content %}
 
-
-
 <style>
-    .contact-container {
+.contact-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -55,80 +52,76 @@
     text-align: center;
     font-size: 2.5em;
     margin-bottom: 20px;
-    text-align: center;
 }
 
 .contact-container p {
     text-align: center;
     font-size: 1.2em;
     margin-bottom: 20px;
-    text-align: center;
 }
 
 .contact-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
     text-align: center;
 }
 
 .contact-details, .contact-form {
-    flex: 1;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: grey;
-    text-align: center;
+    flex: 0 0 45% !important; 
+    padding: 20px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 10px !important;
+    background-color: grey !important;
+    text-align: center !important;
 }
 
 .contact-details h2, .contact-form h2 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-    text-align: center;
+    font-size: 1.8em !important;
+    margin-bottom: 20px !important;
 }
 
 .contact-details p {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+    font-size: 1.2em !important;
+    margin-bottom: 10px !important;
 }
 
 .contact-details i {
-    margin-right: 10px;
-    color: #007bff;
+    margin-right: 10px !important;
+    color: #007bff !important;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 15px !important;
 }
 
 .form-group label {
-    font-size: 1em;
-    margin-bottom: 5px;
-    display: block;
+    font-size: 1em !important;
+    margin-bottom: 5px !important;
+    display: block !important;
 }
 
 .form-control {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 100% !important;
+    padding: 10px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 5px !important;
+    text-align: center !important; 
 }
 
 .btn {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    font-size: 1.2em;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: purple;
-    cursor: pointer;
-    text-align: center;
+    display: block !important;
+    width: 100% !important;
+    padding: 10px !important;
+    font-size: 1.2em !important;
+    border: none !important;
+    border-radius: 5px !important;
+    background-color: #007bff !important;
+    color: purple !important; 
+    cursor: pointer !important;
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #0056b3 !important;
 }
-
 </style>
