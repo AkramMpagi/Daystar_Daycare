@@ -3,32 +3,34 @@
 {% block title %}Contact Us{% endblock title %}
 
 {% block content %}
+
+<br> <br>
 <div class="contact-container">
-    <h1>Contact Us</h1>
-    <p>If you have any questions, feedback, or inquiries, please don't hesitate to reach out to us. We'd love to hear from you!</p>
     
     <div class="contact-info">
         <div class="contact-details">
-            <h2>Contact Information</h2>
-            <p><i class="fas fa-phone-alt"></i> Phone: 0755390101</p>
-            <p><i class="fas fa-envelope"></i> Email: support@daystardaycare.com</p>
-            <p><i class="fas fa-map-marker-alt"></i> Address: 1234 Kinyoro Road, Kampala, Uganda</p>
+            <h2 style="color: black !important;
+            ">Contact Information</h2>
+            <p><i class="fas fa-phone-alt"></i> <b>Phone:</b> 0755390101</p>
+            <p><i class="fas fa-envelope"></i> <b>Email:</b> support@daystardaycare.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> <b>Address:</b> 1234 Kinyoro Road, Kampala, Uganda</p>
         </div>
         <div class="contact-form">
-            <h2>Send Us a Message</h2>
+            <h2 style="color: black !important;
+            ">Send Us a Message</h2>
             <form action="{% url 'contact' %}" method="post">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" class="form-control" required>
+                    <label for="name"></label>
+                    <input type="text" id="name" name="name" class="form-control" required placeholder="Name">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" class="form-control" required>
+                    <label for="email"></label>
+                    <input type="email" id="email" name="email" class="form-control" required placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                    <label for="message"></label>
+                    <textarea id="message" name="message" class="form-control" rows="5" required placeholder="Message"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
@@ -36,92 +38,95 @@
     </div>
 </div>
 
-{% endblock content %}
-
 <style>
-.contact-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    text-align: center;
-}
+    .contact-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        text-align: center;
+    }
+    
+    .contact-container h1 {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+    
+    .contact-container p {
+        text-align: center;
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+    
+    .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .contact-details, .contact-form {
+        flex: 0 0 45% !important; 
+        padding: 20px !important;
+        border: 1px solid #ddd !important;
+        border-radius: 10px !important;
+        background-color: #9669C9 !important;
+        text-align: center !important;
+    }
+    
+    .contact-details h2, .contact-form h2 {
+        font-size: 1.8em !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .contact-details p {
+        font-size: 1.2em !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .contact-details i {
+        margin-right: 10px !important;
+        color: black !important;
+    }
+    
+    .form-group {
+        margin-bottom: 15px !important;
+    }
+    
+    .form-group label {
+        font-size: 1em !important;
+        margin-bottom: 5px !important;
+        display: block !important;
+    }
+    
+    .form-control {
+        width: 100% !important;
+        padding: 10px !important;
+        border: 1px solid #ccc !important;
+        border-radius: 5px !important;
+        text-align: center !important; 
+    }
+    
+    .btn {
+        display: block !important;
+        width: 100% !important;
+        padding: 10px !important;
+        font-size: 1.2em !important;
+        border: none !important;
+        border-radius: 5px !important;
+        background-color: white !important;
+        color: black !important; 
+        cursor: pointer !important;
+    }
+    
+    .btn:hover {
+        background-color: black !important;
+        color: white !important;
+    }
+    </style>
+    
 
-.contact-container h1 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
+{% endblock %}
 
-.contact-container p {
-    text-align: center;
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-.contact-info {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    text-align: center;
-}
-
-.contact-details, .contact-form {
-    flex: 0 0 45% !important; 
-    padding: 20px !important;
-    border: 1px solid #ddd !important;
-    border-radius: 10px !important;
-    background-color: grey !important;
-    text-align: center !important;
-}
-
-.contact-details h2, .contact-form h2 {
-    font-size: 1.8em !important;
-    margin-bottom: 20px !important;
-}
-
-.contact-details p {
-    font-size: 1.2em !important;
-    margin-bottom: 10px !important;
-}
-
-.contact-details i {
-    margin-right: 10px !important;
-    color: #007bff !important;
-}
-
-.form-group {
-    margin-bottom: 15px !important;
-}
-
-.form-group label {
-    font-size: 1em !important;
-    margin-bottom: 5px !important;
-    display: block !important;
-}
-
-.form-control {
-    width: 100% !important;
-    padding: 10px !important;
-    border: 1px solid #ccc !important;
-    border-radius: 5px !important;
-    text-align: center !important; 
-}
-
-.btn {
-    display: block !important;
-    width: 100% !important;
-    padding: 10px !important;
-    font-size: 1.2em !important;
-    border: none !important;
-    border-radius: 5px !important;
-    background-color: #007bff !important;
-    color: purple !important; 
-    cursor: pointer !important;
-}
-
-.btn:hover {
-    background-color: #0056b3 !important;
-}
-</style>
