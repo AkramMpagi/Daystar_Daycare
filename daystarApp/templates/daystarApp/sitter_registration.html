@@ -24,6 +24,10 @@
   .mb-3 {
     margin-bottom: 1rem;
   }
+
+  option {
+    color: purple !important;
+  }
 </style>
 
 
@@ -57,18 +61,18 @@
           <input type="date" class="form-control" name="date_of_birth" required>
         </div>
         <div class="col-md-6 mb-3">
-          <label for="nin" class="form-label">NIN</label>
+          <label for="nin" class="form-label"></label>
           <input type="text" class="form-control" placeholder="NIN" name="nin" required>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-6 mb-3">
-          <label for="recommender_name" class="form-label">Recommender Name</label>
+          <label for="recommender_name" class="form-label"></label>
           <input type="text" class="form-control" placeholder="Recommender Name" name="recommender_name" required>
         </div>
         <div class="col-md-6 mb-3">
-          <label for="level_of_education" class="form-label">Level of Education</label>
+          <label for="level_of_education" class="form-label"></label>
           <select class="form-select" name="level_of_education" required>
             <option value="">Level of Education</option>
             <option value="Degree">Degree</option>
